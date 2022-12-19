@@ -1,0 +1,77 @@
+@import "./variables";
+@import "./functions";
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .top-bar {
+    @include flex(space-around);
+    background-color: $secondary-color;
+    color: $text-color;
+    padding: pad(small) 0;
+    font-size: font_sz(small);
+    @include big-mobile {
+      display: none;
+    }
+    span {
+      padding: 0 pad(small);
+      cursor: pointer;
+    }
+    .fa-envelope,
+    .sms {
+      border-right: 1px solid white;
+    }
+  }
+  #burger {
+    font-size: font_sz(medium) + 0.5rem;
+    display: none;
+    @include tablet {
+      display: initial;
+    }
+  }
+  .nav {
+    @include flex(space-around);
+    z-index: 1000;
+    background-color: white;
+    padding: pad(medium) 0;
+    box-shadow: 0 1px 10px 0px rgb(0 0 0 / 20%);
+    .menu {
+      @include flex(center);
+      font-size: font_sz(small) + 0.2rem;
+      font-weight: bold;
+      li {
+        list-style: none;
+        padding: 0 pad(medium);
+        a {
+          color: black;
+          text-decoration: none;
+          &:hover {
+            color: $secondary-color;
+          }
+          @include tablet {
+            color: $text-color;
+          }
+        }
+      }
+      @include tablet {
+        @include flex(space-evenly);
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 50vh;
+        width: 100%;
+        background: rgb(44, 41, 41);
+        transition: 0.5s ease-in-out;
+        z-index: 1000;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+    }
+    .menu.active {
+      transform: scaleY(1);
+    }
+  }
+}

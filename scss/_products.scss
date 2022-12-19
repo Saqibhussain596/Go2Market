@@ -1,0 +1,56 @@
+@import "./variables";
+@import "./functions";
+
+.products {
+  .content {
+    p {
+      font-size: font_sz(medium);
+      @include big-mobile {
+        padding: 0 pad(small);
+        font-size: font_sz(small);
+      }
+    }
+    .card-container {
+      @include flex(center);
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 0 pad(x-large);
+      @include big-mobile {
+        padding: 0;
+      }
+      .product-card {
+        @include flex(center);
+        flex-direction: column;
+        padding: pad(x-large) pad(medium);
+        margin: marg_sz(small);
+        border: 0.5px solid rgba(0, 0, 0, 0.371);
+        border-radius: 2rem;
+        flex: 1 1 35rem;
+        @include big-mobile {
+          padding: pad(large) pad(medium);
+        }
+        div {
+          margin: 1rem 0;
+          @include small-mobile {
+            margin: 0.5rem 0;
+          }
+        }
+        .product-img {
+          width: 11rem;
+          padding: pad(large) + 0.5rem;
+          border-radius: 50%;
+          background: $primary-color;
+        }
+        .product-name {
+          font-size: font_sz(medium);
+        }
+        .product-description {
+          font-size: font_sz(small);
+        }
+        .btn {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}

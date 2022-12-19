@@ -1,0 +1,32 @@
+@import "./variables";
+@import "./functions";
+
+.about {
+  height: fit-content;
+  .content {
+    @include flex(center);
+    color: $text-color;
+    flex-direction: column;
+    background-image: url("../images/about_Bg.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: pad(x-large) + 10rem;
+    @include big-mobile {
+      padding: pad(large);
+    }
+    p {
+      font-size: font_sz(large) - 0.2rem;
+      line-height: 6rem;
+
+      @include big-mobile {
+        font-size: font_sz(medium);
+        line-height: 4rem;
+      }
+      @include small-mobile {
+        font-size: font_sz(small);
+        line-height: 2.5rem;
+      }
+    }
+  }
+}

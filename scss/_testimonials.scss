@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./functions";
+
+.testimonials {
+  .content {
+    margin: marg_sz(small) marg_sz(x-large);
+    padding: pad(large);
+    background: linear-gradient(
+          to right,
+          $secondary-color 12px,
+          transparent 8px
+        )
+        0 0,
+      linear-gradient(to right, $secondary-color 12px, transparent 8px) 0 100%,
+      linear-gradient(to left, $secondary-color 12px, transparent 8px) 100% 0,
+      linear-gradient(to left, $secondary-color 12px, transparent 8px) 100% 100%,
+      linear-gradient(to bottom, $secondary-color 12px, transparent 8px) 0 0,
+      linear-gradient(to bottom, $secondary-color 12px, transparent 8px) 100% 0,
+      linear-gradient(to top, $secondary-color 12px, transparent 8px) 0 100%,
+      linear-gradient(to top, $secondary-color 12px, transparent 8px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    border: 0.1rem solid rgba(113, 98, 98, 0.331);
+    height: fit-content;
+    @include big-mobile {
+      margin: 0;
+    }
+    .reviewer-info {
+      margin: marg_sz(small);
+      h4 {
+        font-size: font_sz(large) - 0.5rem;
+        @include small-mobile {
+          font-size: font_sz(medium);
+        }
+      }
+      h5 {
+        font-size: font_sz(medium);
+        @include small-mobile {
+          font-size: font_sz(medium) - 0.5rem;
+        }
+      }
+    }
+    .review {
+      margin: marg_sz(small);
+      font-size: font_sz(small);
+      line-height: 3rem;
+      @include small-mobile {
+        margin: marg_sz(small) 0;
+        line-height: 2.1rem;
+      }
+    }
+  }
+}

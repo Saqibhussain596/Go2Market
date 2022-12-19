@@ -1,0 +1,51 @@
+@import "./variables";
+@import "./functions";
+@import "./products";
+.features {
+  @extend .products;
+  .content {
+    p {
+      font-size: font_sz(medium);
+      @include small-mobile {
+        padding: 0 pad(medium);
+        font-size: font_sz(small);
+      }
+    }
+    .feature-card-container {
+      @include flex(center);
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 0 pad(x-large);
+      margin-top: marg_sz(large);
+      @include small-mobile {
+        padding: 0;
+      }
+      .feature-card {
+        @include flex(center);
+        flex-direction: column;
+        position: relative;
+        padding: pad(x-large) pad(medium);
+        margin: marg_sz(large) marg_sz(small);
+        border: 0.5px solid $secondary-color;
+        border-radius: 2rem;
+        flex: 1 1 25rem;
+        .feature-img {
+          background-color: white;
+          width: 13rem;
+          padding: pad(large) + 0.5rem;
+          border: 0.5rem solid $secondary-color;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 80%;
+        }
+        .feature-name {
+          font-size: font_sz(medium);
+          margin: marg_sz(small) 0;
+        }
+        .feature-description {
+          font-size: font_sz(small);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "./variables";
+@import "./functions";
+* {
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  transition: 0.3s;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+section:not(#home, #about, #contact) {
+  padding: pad(x-large);
+  @include big-mobile {
+    padding: pad(medium);
+  }
+  @include small-mobile {
+    padding: pad(small) 0;
+  }
+}
+.heading {
+  text-align: center;
+  font-size: font_sz(large);
+  letter-spacing: 0.3rem;
+  margin: marg_sz(large) 0 marg_sz(medium) 0;
+  @include big-mobile {
+    font-size: font_sz(large) - 0.5rem;
+  }
+  @include small-mobile {
+    padding: 0 pad(small);
+    font-size: font_sz(medium) + 0.5rem;
+  }
+}
+.dot {
+  display: inline-block;
+  height: font_sz(small) - 0.2rem;
+  width: font_sz(small) - 0.2rem;
+  background: $primary-color;
+  border-radius: 50%;
+}
+.btn {
+  all: unset;
+  background: $primary-color;
+  color: $text-color;
+  border-radius: 0.5rem;
+  margin-top: marg_sz(large);
+  font-size: font_sz(medium);
+  padding: pad(medium) pad(x-large) + 1rem;
+  border: 0.5rem solid $primary-color;
+  cursor: pointer;
+  @include big-mobile {
+    margin-top: marg_sz(medium);
+    font-size: font_sz(small);
+    padding: pad(medium) pad(large);
+  }
+}
+.btn:hover {
+  background: none;
+  background-color: rgb(255, 166, 0);
+}
+.center {
+  text-align: center;
+}
+.logo {
+  font-size: font_sz(medium);
+  .secondary-name {
+    color: $secondary-color;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}

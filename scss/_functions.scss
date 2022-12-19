@@ -1,0 +1,35 @@
+// Functions
+
+@function pad($padding-val) {
+  @return map-get($padding-sizes, $padding-val);
+}
+
+@function font_sz($size-val) {
+  @return map-get($font-sizes, $size-val);
+}
+
+@function marg_sz($marg-val) {
+  @return map-get($margin-sizes, $marg-val);
+}
+// Mixins
+// To create flexbox with variable flex direction and content spacing
+@mixin flex($just-con) {
+  display: flex;
+  justify-content: $just-con;
+  align-items: center;
+}
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin big_mobile {
+  @media (max-width: $big-mobile) {
+    @content;
+  }
+}
+@mixin small_mobile {
+  @media (max-width: $small-mobile) {
+    @content;
+  }
+}

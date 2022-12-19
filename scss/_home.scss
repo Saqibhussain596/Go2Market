@@ -1,0 +1,36 @@
+@import "./variables";
+@import "./functions";
+
+.home {
+  height: 100vh;
+  background-image: url("../images/homebg.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .content {
+    @include flex(center);
+    background-image: linear-gradient(
+      rgba(183, 110, 0, 0.45) 0%,
+      rgba(0, 21, 45, 0.502) 100%
+    );
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: $text-color;
+    padding: pad(large);
+    h3 {
+      font-size: font_sz(x-large);
+      margin-bottom: 2rem;
+      @include small-mobile {
+        font-size: font_sz(large);
+      }
+    }
+    p {
+      font-size: font_sz(medium);
+      text-align: center;
+      @include small-mobile {
+        font-size: font_sz(small);
+      }
+    }
+  }
+}

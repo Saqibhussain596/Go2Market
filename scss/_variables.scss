@@ -1,0 +1,35 @@
+// Variables
+$primary-color: linear-gradient(
+  to right,
+  rgba(240, 171, 50, 1) 0%,
+  rgba(249, 109, 48, 1) 100%
+);
+$secondary-color: rgba(229, 111, 59, 1);
+$text-color: white;
+$hover-color: linear-gradient(
+  to right,
+  rgba(240, 171, 50, 0.5) 0%,
+  rgba(249, 109, 48, 0.5) 100%
+);
+$tablet: 850px;
+$big-mobile: 650px;
+$small-mobile: 450px;
+// Maps
+$padding-sizes: (
+  "small": 1rem,
+  "medium": 1.5rem,
+  "large": 2rem,
+  "x-large": 4rem,
+);
+$font-sizes: (
+  "small": 1.5rem,
+  "medium": 2rem,
+  "large": 3.5rem,
+  "x-large": 4.5rem,
+);
+$margin-sizes: (
+  "small": 2rem,
+  "medium": 4rem,
+  "large": 6rem,
+  "x-large": 8rem,
+);
